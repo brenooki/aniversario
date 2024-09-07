@@ -1,0 +1,169 @@
+/* Estilos gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdf6f9; /* Fundo rosa claro */
+    overflow: hidden;
+}
+
+/* Container principal */
+.butterfly-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos das flores criadas com divs */
+.flower {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border-radius: 50%;
+    opacity: 0.7;
+    transform: scale(0);
+}
+
+.flower1 {
+    top: 10%;
+    left: 5%;
+}
+
+.flower2 {
+    top: 80%;
+    left: 80%;
+}
+
+/* Estilos das borboletas criadas com divs */
+.butterfly {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: lightblue;
+    border-radius: 50%;
+    opacity: 0.9;
+    transform: rotate(45deg) scale(0);
+}
+
+.butterfly1 {
+    top: 50%;
+    left: 10%;
+}
+
+.butterfly2 {
+    top: 30%;
+    left: 70%;
+}
+
+/* Partículas douradas */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particles::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: gold;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    animation: particle-animation 3s infinite linear;
+}
+
+@keyframes particle-animation {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-100%) scale(0.5); }
+}
+
+/* Convite */
+.invitation-card {
+    background: linear-gradient(135deg, #FFD1DC, #FFEBF0); /* Tons rosa e pastel */
+    border: 3px solid #d4af37; /* Borda dourada */
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.9);
+    position: relative;
+    z-index: 2;
+}
+
+strong {
+    color: rgb(192, 189, 35);
+    font-family: 'Dancing Script', cursive;
+}
+
+.invitation-card h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5em;
+    color: #d4af37;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.invitation-card h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5em;
+    color: #e8a4a4;
+    margin-bottom: 20px;
+}
+
+.details p {
+    font-size: 1.3em;
+    color: #929191;
+    margin: 5px 0;
+}
+
+.location-button {
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.3em;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.location-button:hover {
+    background-color: #b89a1e;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .invitation-card h1 {
+        font-size: 3.5em;
+    }
+    
+    .invitation-card h2 {
+        font-size: 3em;
+    }
+    
+    .invitation-card p, .details p {
+        font-size: 1.2em;
+    }
+}
